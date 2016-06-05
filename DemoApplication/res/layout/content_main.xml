@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app1="http://schemas.android.com/apk/res/com.example.controller"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.controller.MainActivity"
+    tools:showIn="@layout/activity_main" >
+
+    <TextView
+        android:id="@+id/content_title1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:paddingBottom="5dp"
+        android:paddingTop="10dp"
+        android:text="Welcome"
+        android:textColor="@color/primary"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/content_title2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/content_title1"
+        android:layout_centerHorizontal="true"
+        android:paddingBottom="10dp"
+        android:text="User"
+        android:textColor="@color/primary"
+        android:textSize="20sp" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/dashboard_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/content_title2"
+        android:scrollbars="vertical" />
+
+</RelativeLayout>

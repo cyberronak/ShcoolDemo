@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/home"
+            android:title="Home"
+            android:icon="@drawable/ic_home"/>
+        <item
+            android:id="@+id/announcement"
+            android:title="Announcement"
+            android:icon="@drawable/ic_action_volume_up"/>
+        <item
+            android:id="@+id/test"
+            android:title="Test"
+            android:icon="@drawable/ic_action_copy"/>
+        <item
+            android:id="@+id/attendence"
+            android:title="Attendence"
+            android:icon="@drawable/ic_action_paste"/>
+        <item
+            android:id="@+id/leaderboard"
+            android:title="Leaderboard"
+            android:icon="@drawable/ic_action_star_5"/>
+        <item
+            android:id="@+id/settings"
+            android:title="Settings"
+            android:icon="@drawable/ic_setting"/>
+        <item
+            android:id="@+id/about"
+            android:title="About"
+            android:icon="@drawable/ic_action_info"/>
+        <item
+            android:id="@+id/logout"
+            android:title="Logout"
+            android:icon="@drawable/ic_exit"/>
+        </group>
+</menu>
