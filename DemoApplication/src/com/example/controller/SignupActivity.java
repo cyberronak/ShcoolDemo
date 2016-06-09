@@ -47,6 +47,9 @@ public class SignupActivity extends AppCompatActivity implements AsyncInterface
 
 		setContentView(R.layout.activity_signup);
 
+		//opening transition animations
+	    overridePendingTransition(R.anim.activity_open_translate,R.anim.activity_close_transition);
+
 		_firstnameText = (EditText) findViewById(R.id.input_firstname);
 		_lastnameText = (EditText) findViewById(R.id.input_lastname);
 		_emailText = (EditText) findViewById(R.id.input_email);
@@ -89,7 +92,14 @@ public class SignupActivity extends AppCompatActivity implements AsyncInterface
 			{
 				// Finish the registration screen and return to the Login
 				// activity
-				finish();
+				Intent intent = new Intent(getApplicationContext(),
+						LoginActivity.class);
+				intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+				startActivity(intent);
+				//closing transition animations
+			    overridePendingTransition(R.anim.activity_open_transition,R.anim.activity_close_translate);
+			    finishAfterTransition();
 			}
 		});
 

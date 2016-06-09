@@ -10,17 +10,19 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    
+    <uses-permission android:name="com.android.launcher.permission.INSTALL_SHORTCUT" />
+    <uses-permission android:name="com.android.launcher.permission.UNINSTALL_SHORTCUT" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme.Dark" >
         <activity
-            android:name="com.example.controller.LoginActivity"
-            android:label="@string/app_name" 
+            android:name="com.example.controller.SplashScreen"
             android:configChanges="orientation"
-		    android:screenOrientation="portrait">
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,20 +30,31 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.example.controller.MainActivity"
-            android:theme="@style/AppTheme.Dark" 
+            android:name="com.example.controller.LoginActivity"
             android:configChanges="orientation"
-		    android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Dark" />
         <activity
             android:name="com.example.controller.SignupActivity"
-            android:theme="@style/AppTheme.Dark" 
             android:configChanges="orientation"
-		    android:screenOrientation="portrait"/>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Dark" />
+        <activity
+            android:name="com.example.controller.MainActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Dark" />
         <activity
             android:name="com.example.controller.ContactDetailsActivity"
-            android:theme="@style/AppTheme.Dark" 
             android:configChanges="orientation"
-		    android:screenOrientation="portrait"/>
-</application>
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Dark" />
+        <activity
+            android:name="com.custom.CalendarActivity"
+            android:configChanges="orientation"
+            android:parentActivityName="com.example.controller.MainActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Dark" />
+    </application>
 
 </manifest>

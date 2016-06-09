@@ -31,11 +31,4 @@
         android:textColor="@color/primary"
         android:textSize="20sp" />
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/dashboard_recycler_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/content_title2"
-        android:scrollbars="vertical" />
-
 </RelativeLayout>

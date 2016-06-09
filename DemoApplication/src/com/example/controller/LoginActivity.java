@@ -41,6 +41,11 @@ public class LoginActivity extends AppCompatActivity implements AsyncInterface {
 		super.onCreate(savedInstanceState);
 
 		setContentView(R.layout.activity_login);
+		
+		//opening transition animations
+	    overridePendingTransition(R.anim.activity_open_translate,R.anim.activity_close_transition);
+
+		
 		_emailText = (EditText) findViewById(R.id.input_email);
 		_passwordText = (EditText) findViewById(R.id.input_password);
 		_loginButton = (Button) findViewById(R.id.btn_login);
@@ -54,6 +59,7 @@ public class LoginActivity extends AppCompatActivity implements AsyncInterface {
 		String userUserName = shpref.getString(StringConst.USERNAME, "");
 		String userDate = shpref.getString(StringConst.CREATED_AT, "");
 
+		
 		_loginButton.setOnClickListener(new View.OnClickListener() {
 
 			@Override
@@ -93,6 +99,9 @@ public class LoginActivity extends AppCompatActivity implements AsyncInterface {
 				intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 				intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 				startActivity(intent);
+				//closing transition animations
+			    overridePendingTransition(R.anim.activity_open_transition,R.anim.activity_close_translate);
+			    finishAfterTransition();
 			}
 		});
 
@@ -106,19 +115,24 @@ public class LoginActivity extends AppCompatActivity implements AsyncInterface {
 			intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 			startActivity(intent);
 		}
-
 	}
 
 	@Override
 	public void onBackPressed() {
 		// TODO Auto-generated method stub
 		super.onBackPressed();
-		finish();
+		//closing transition animations
+	    overridePendingTransition(R.anim.activity_open_transition,R.anim.activity_close_translate);
+
+		this.finish();
 	}
 
 	public void onLoginSuccess() {
 		_loginButton.setEnabled(true);
 		pDialog.cancel();
+		//closing transition animations
+	    overridePendingTransition(R.anim.activity_open_transition,R.anim.activity_close_translate);
+
 		finish();
 	}
 
